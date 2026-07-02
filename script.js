@@ -1,131 +1,128 @@
-﻿// ===== NAVBAR SCROLL =====
+﻿// === DADOS DAS CIDADES POR ESTADO ===
+const cidadesPorEstado = {
+  SC: ['Balneário Camboriú','Blumenau','Florianópolis','Joinville'],
+  SP: ['Bauru','Campinas','Guarulhos','Ribeirão Preto','Santo André','Santos','São José do Rio Preto','São José dos Campos','São Paulo - Borba Gato','São Paulo - Vila Mariana','Sorocaba'],
+  PA: ['Belém','Parauapebas'],
+  MG: ['Belo Horizonte','Ipatinga','Uberlândia'],
+  DF: ['Brasília'],
+  MS: ['Campo Grande','Dourados'],
+  MT: ['Cuiabá'],
+  PR: ['Curitiba','Londrina'],
+  CE: ['Fortaleza'],
+  GO: ['Goiânia'],
+  AL: ['Maceió'],
+  RS: ['Porto Alegre'],
+  RO: ['Porto Velho'],
+  RJ: ['Rio de Janeiro'],
+  BA: ['Salvador'],
+  MA: ['São Luís'],
+  PI: ['Teresina'],
+  ES: ['Vitória']
+};
+
+// === MAPA INTERATIVO ===
+const statePaths = document.querySelectorAll('.state-path');
+const mapaTitulo = document.getElementById('mapa-estado-nome');
+const mapaCidades = document.getElementById('mapa-cidades-lista');
+
+// Marcar estados com unidades
+statePaths.forEach(path => {
+  const uf = path.getAttribute('data-uf');
+  if (cidadesPorEstado[uf]) {
+    path.classList.add('has-city');
+  }
+  path.addEventListener('click', () => {
+    statePaths.forEach(p => p.classList.remove('active'));
+    path.classList.add('active');
+    const name = path.getAttribute('data-name') || uf;
+    mapaTitulo.textContent = name;
+    mapaCidades.innerHTML = '';
+    const cidades = cidadesPorEstado[uf];
+    if (cidades && cidades.length > 0) {
+      cidades.forEach(c => {
+        const li = document.createElement('li');
+        li.textContent = c;
+        mapaCidades.appendChild(li);
+      });
+    } else {
+      const li = document.createElement('li');
+      li.className = 'mapa-hint';
+      li.textContent = 'Nenhuma unidade ainda — seja o primeiro!';
+      mapaCidades.appendChild(li);
+    }
+  });
+});
+
+// === FIXED BAR ===
+const fixedBar = document.getElementById('fixed-bar');
+const spacer = document.getElementById('fixed-bar-spacer');
+function updateFixedBar() {
+  const hero = document.querySelector('.hero-section');
+  const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+  const show = heroBottom < 0;
+  if (fixedBar) {
+    fixedBar.classList.toggle('visible', show);
+    if (spacer) spacer.style.height = show ? fixedBar.offsetHeight + 'px' : '0';
+  }
+}
+window.addEventListener('scroll', updateFixedBar, { passive: true });
+window.addEventListener('resize', updateFixedBar, { passive: true });
+updateFixedBar();
+
+// === NAVBAR ===
 const navbar = document.getElementById('navbar');
-const floatingCta = document.getElementById('floating-cta');
-
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) {
-    navbar.classList.add('scrolled');
-    floatingCta.classList.add('visible');
-  } else {
-    navbar.classList.remove('scrolled');
-    floatingCta.classList.remove('visible');
-  }
-});
+  if (navbar) navbar.style.boxShadow = window.scrollY > 40 ? '0 4px 24px rgba(0,0,0,.3)' : '';
+}, { passive: true });
 
-// ===== HAMBURGER =====
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  hamburger.classList.toggle('open');
-  hamburger.setAttribute('aria-expanded', isOpen.toString());
-});
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
+// === SMOOTH SCROLL ===
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
-document.addEventListener('click', (e) => {
-  if (!navbar.contains(e.target)) {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-  }
-});
 
-// ===== ACCORDION / FAQ =====
-const accordionTriggers = document.querySelectorAll('.accordion-trigger');
-accordionTriggers.forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const content = document.getElementById(trigger.getAttribute('aria-controls'));
-    const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-    accordionTriggers.forEach(t => {
-      t.setAttribute('aria-expanded', 'false');
-      const c = document.getElementById(t.getAttribute('aria-controls'));
-      if (c) c.classList.remove('open');
+// === HERO FORM ===
+const heroForm = document.getElementById('hero-form-el');
+if (heroForm) {
+  const telIn = document.getElementById('hf-tel');
+  if (telIn) {
+    telIn.addEventListener('input', () => {
+      let v = telIn.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length >= 7) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+      else if (v.length >= 3) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+      else if (v.length) v = '(' + v;
+      telIn.value = v;
     });
-    if (!isExpanded) {
-      trigger.setAttribute('aria-expanded', 'true');
-      if (content) content.classList.add('open');
-    }
-  });
-});
-
-// ===== FADE UP ANIMATIONS =====
-const fadeElements = document.querySelectorAll('.bento-card, .plan-card, .testimonial-card, .step-item, .accordion-item, .sobre-badges, .hero-stat, .logo-wall-item, .contato-feature');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('fade-up', 'visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-fadeElements.forEach((el, i) => {
-  el.classList.add('fade-up');
-  el.style.transitionDelay = (i % 5) * 0.08 + 's';
-  observer.observe(el);
-});
-
-// ===== SMOOTH ACTIVE NAV =====
-const sections = document.querySelectorAll('section[id]');
-const navItems = document.querySelectorAll('.nav-links a');
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navItems.forEach(item => { item.style.color = ''; });
-      const activeLink = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
-      if (activeLink) activeLink.style.color = 'var(--blue)';
-    }
-  });
-}, { threshold: 0.3 });
-sections.forEach(section => sectionObserver.observe(section));
-
-// ===== FORM SUBMIT =====
-const form = document.getElementById('contato-form');
-const modalOverlay = document.getElementById('modal-overlay');
-const modalClose = document.getElementById('modal-close');
-
-if (form) {
-  form.addEventListener('submit', (e) => {
+  }
+  heroForm.addEventListener('submit', e => {
     e.preventDefault();
-    const nome = document.getElementById('input-nome').value.trim();
-    const email = document.getElementById('input-email').value.trim();
-    const telefone = document.getElementById('input-telefone').value.trim();
-    const investimento = document.getElementById('input-investimento').value;
-    const cidade = document.getElementById('input-cidade').value.trim();
-    const termos = document.getElementById('input-termos').checked;
-    if (!nome || !email || !telefone || !investimento || !cidade) {
-      alert('Por favor, preencha todos os campos obrigat\u00f3rios.');
-      return;
-    }
-    if (!termos) {
-      alert('Por favor, aceite a Pol\u00edtica de Privacidade para continuar.');
-      return;
-    }
-    if (modalOverlay) {
-      modalOverlay.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-    form.reset();
+    document.getElementById('modal-overlay').style.display = 'flex';
+    heroForm.reset();
   });
 }
 
-if (modalClose) {
-  modalClose.addEventListener('click', () => {
-    modalOverlay.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-}
-if (modalOverlay) {
-  modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) {
-      modalOverlay.style.display = 'none';
-      document.body.style.overflow = '';
+// === MODAL ===
+const modalClose = document.getElementById('modal-close');
+const modalOverlay = document.getElementById('modal-overlay');
+if (modalClose) modalClose.addEventListener('click', () => { modalOverlay.style.display = 'none'; });
+if (modalOverlay) modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) modalOverlay.style.display = 'none'; });
+
+// === FADE IN ON SCROLL ===
+const fadeEls = document.querySelectorAll('.dif-item, .produto-card, .dep-card, .modelo-card, .vant-card, .step-v');
+fadeEls.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity .5s ease, transform .5s ease';
+});
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => { e.target.style.opacity = '1'; e.target.style.transform = 'none'; }, i * 60);
+      io.unobserve(e.target);
     }
   });
-}
-
-console.log('Faculdade Inspirar - Site de Franquias carregado!');
+}, { threshold: 0.1 });
+fadeEls.forEach(el => io.observe(el));
