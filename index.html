@@ -1,306 +1,370 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Seja um Franqueado | Faculdade Inspirar</title>
-<meta name="description" content="Abra sua franquia Faculdade Inspirar. Maior rede de pos-graduacao em Saude do Brasil."/>
-<link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seja um Franqueado | Faculdade Inspirar</title>
+  <meta name="description" content="Invista na maior rede de ensino em saúde do Brasil. 29+ anos de mercado, 40+ unidades. Seja um franqueado Inspirar.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="navbar-inner">
-    <a href="#top"><img src="Logo branca - horizontal.png" alt="Faculdade Inspirar" class="navbar-logo"/></a>
-    <div class="navbar-links">
-      
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#modelos">Modelos</a>
-      <a href="#mapa">Onde Estamos</a>
-    </div>
-    <a href="#hero-form" class="btn btn-primary btn-sm" id="btn-nav">Quero ser um franqueado</a>
-  </div>
-</nav>
+  <!-- BACKGROUND GLOWS -->
+  <div class="ambient__blob ambient__blob--1"></div>
+  <div class="ambient__blob ambient__blob--2"></div>
 
-<!-- HERO COM FORMULARIO (Kopenhagen style) -->
-<section class="hero-section" id="top">
-  <div class="hero-bg">
-    <img src="IMG_7433.JPG" alt="Faculdade Inspirar" class="hero-img"/>
-    <div class="hero-overlay"></div>
-  </div>
-  <div class="hero-grid">
-    <div class="hero-text-col">
-      <img src="Logo branca - horizontal.png" alt="Faculdade Inspirar" class="hero-logo"/>
-      <h1 class="hero-title">Transforme sua cidade com a <span class="gradient-text">Faculdade Inspirar</span></h1>
-      <p class="hero-sub">A maior rede de franquias de educa&ccedil;&atilde;o na &aacute;rea da Sa&uacute;de do Brasil. 29+ anos de tradi&ccedil;&atilde;o.</p>
+  <!-- NAVBAR -->
+  <div class="navbar-wrapper">
+    <div class="navbar__inner" id="navbar">
+      <img src="Logo branca - horizontal.png" alt="Inspirar" class="nav-logo">
+      <div class="navbar-links">
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#mapa">Mapa</a>
+      </div>
     </div>
-    <div class="hero-form-col" id="hero-form">
-      <div class="hero-form-card">
-        <h3 class="hero-form-title">Quero ser um franqueado</h3>
-        <form id="hero-form-el" novalidate>
-          <div class="hf-field"><label for="hf-nome">Nome completo</label><input type="text" id="hf-nome" placeholder="Seu nome" required/></div>
-          <div class="hf-field"><label for="hf-email">E-mail</label><input type="email" id="hf-email" placeholder="seu@email.com" required/></div>
-          <div class="hf-row">
-            <div class="hf-field"><label for="hf-tel">Celular</label><input type="tel" id="hf-tel" placeholder="(00) 00000-0000" required/></div>
-            <div class="hf-field"><label for="hf-uf">Estado</label>
-              <select id="hf-uf" required>
-                <option value="">UF</option>
-                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
-                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
-                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
-                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
-                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
-                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
-                <option>SP</option><option>SE</option><option>TO</option>
-              </select>
-            </div>
-          </div>
-          <div class="hf-field"><label for="hf-cidade">Cidade de interesse</label><input type="text" id="hf-cidade" placeholder="Cidade" required/></div>
-          <div class="hf-field"><label for="hf-invest">Capital dispon&iacute;vel para investimento</label>
-            <select id="hf-invest" required>
-              <option value="">Selecione</option>
-              <option>At&eacute; R$ 250 mil</option>
-              <option>Entre R$ 250 mil e R$ 390 mil</option>
-              <option>Entre R$ 390 mil e R$ 600 mil</option>
-              <option>Acima de R$ 600 mil</option>
-            </select>
-          </div>
-          <div class="hf-check"><input type="checkbox" id="hf-termos" required/><label for="hf-termos">Concordo com a <a href="https://www.inspirar.com.br/politica-de-privacidade/" target="_blank">Pol&iacute;tica de Privacidade</a></label></div>
-          <button type="submit" class="btn btn-primary btn-full" id="btn-hf-submit">AGENDAR UMA REUNI&Atilde;O &#8594;</button>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg">
+      <img src="IMG_7433.JPG" alt="Fundo Inspirar" class="hero-img">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content-wrapper">
+      <div class="hero-text" data-reveal>
+        <span class="eyebrow">Faculdade Inspirar</span>
+        <h1 class="hero-title">Invista na maior rede de ensino <em>em Saúde</em> do Brasil</h1>
+        <p class="hero-sub">Seja dono da sua própria Faculdade Inspirar. Um modelo de negócio sólido com 29+ anos de mercado educacional de excelência.</p>
+      </div>
+      <div class="hero-form-card" data-reveal>
+        <h3 style="margin-bottom:24px;font-size:1.15rem;color:var(--text-heading)">Quero ser franqueado</h3>
+        <form id="hero-form-el">
+          <label class="form-label">Nome completo</label>
+          <input type="text" class="input" placeholder="Seu nome" required>
+          <label class="form-label">E-mail</label>
+          <input type="email" class="input" placeholder="seu@email.com" required>
+          <label class="form-label">Celular</label>
+          <input type="tel" class="input" id="hf-tel" placeholder="(00) 00000-0000" required>
+          <label class="form-label">Quanto espera investir?</label>
+          <select class="select" required>
+            <option value="">Selecione...</option>
+            <option>Até R$ 100.000</option>
+            <option>R$ 100.000 a R$ 300.000</option>
+            <option>Mais de R$ 300.000</option>
+          </select>
+          <label class="form-label">Cidade de interesse</label>
+          <input type="text" class="input" placeholder="Ex: São Paulo" required>
+          <button type="submit" class="btn-primary" style="width:100%;margin-top:8px;justify-content:center">
+            Quero ser franqueado
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
         </form>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VIDEO INSTITUCIONAL -->
-<section class="video-section" id="sobre">
-  <div class="container">
-    <div class="video-wrap">
-      <div class="video-inner" id="video-placeholder">
-        <div class="play-btn">&#9658;</div>
+  <!-- ========== STATS BAR ========== -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num">+29</span>
+        <span class="stat-label">anos de história</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <span class="stat-num">+40</span>
+        <span class="stat-label">unidades em operação</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <span class="stat-num">+1.000</span>
+        <span class="stat-label">cursos na área</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <span class="stat-num">+100K</span>
+        <span class="stat-label">alunos formados</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- STRIP DE NUMEROS -->
-<section class="kop-strip">
-  <div class="kop-strip-inner">
-    <div class="kop-strip-stat"><span class="kop-num">+29</span><span class="kop-lbl">anos de hist&oacute;ria</span></div>
-    <div class="kop-div"></div>
-    <div class="kop-strip-stat"><span class="kop-num">+40</span><span class="kop-lbl">unidades em opera&ccedil;&atilde;o</span></div>
-    <div class="kop-div"></div>
-    <div class="kop-strip-stat"><span class="kop-num">+1.000</span><span class="kop-lbl">cursos na &aacute;rea</span></div>
-    <div class="kop-div"></div>
-    <div class="kop-strip-stat"><span class="kop-num">+100K</span><span class="kop-lbl">alunos formados</span></div>
-  </div>
-</section>
+  <!-- ========== VÍDEO ========== -->
+  <section class="section video-section" id="sobre" data-reveal>
+    <div class="video-wrapper">
+      <div class="video-placeholder">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- DIFERENCIAIS -->
-<section class="diferenciais-section" id="diferenciais">
-  <div class="container">
-    <div class="dif-header">
-      <span class="eyebrow">Diferenciais</span>
-      <h2 class="section-title">Por que somos diferentes</h2>
+  <!-- ========== DIFERENCIAIS ========== -->
+  <section class="section" id="diferenciais" data-reveal>
+    <div class="section__header">
+      <span class="eyebrow">Nossos Diferenciais</span>
+      <h2 class="section__title">Por que somos <em>diferentes?</em></h2>
     </div>
     <div class="dif-list">
       <div class="dif-item">
         <div class="dif-num">01</div>
-        <div class="dif-icon">&#127942;</div>
         <div class="dif-body">
-          <h3>Pioneirismo Acad&ecirc;mico</h3>
-          <p>Primeira faculdade a lan&ccedil;ar p&oacute;s-gradua&ccedil;&atilde;o na &aacute;rea da fisioterapia no Brasil.</p>
+          <div class="dif-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5" opacity=".3"/><path d="M24 10L14 17l10 7 10-7-10-7zM14 31l10 7 10-7M14 24l10 7 10-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Pioneirismo na área da saúde</h3>
+            <p>Primeira faculdade a lançar pós-graduação em Fisioterapia no Brasil — mais de 29 anos transformando o ensino superior em saúde.</p>
+          </div>
         </div>
       </div>
       <div class="dif-item">
         <div class="dif-num">02</div>
-        <div class="dif-icon">&#128300;</div>
         <div class="dif-body">
-          <h3>Pr&aacute;tica desde o Primeiro Dia</h3>
-          <p>Aula pr&aacute;tica desde o primeiro dia de aula &mdash; metodologia que forma profissionais completos.</p>
+          <div class="dif-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5" opacity=".3"/><path d="M24 36c0 0-14-7-14-17V13l14-5 14 5v6c0 10-14 17-14 17z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 24l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Prática desde o primeiro dia</h3>
+            <p>Os alunos têm contato com atividades práticas já na primeira aula — diferencial que atrai e fideliza estudantes.</p>
+          </div>
         </div>
       </div>
       <div class="dif-item">
         <div class="dif-num">03</div>
-        <div class="dif-icon">&#128203;</div>
         <div class="dif-body">
-          <h3>Encontro Nacional de Franqueados</h3>
-          <p>Evento anual que re&uacute;ne toda a rede para troca de experi&ecirc;ncias, treinamentos e estrat&eacute;gia.</p>
+          <div class="dif-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5" opacity=".3"/><circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M10 38c0-6 6-10 14-10s14 4 14 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h3>Maior comunidade de saúde do Brasil</h3>
+            <p>Encontros nacionais de franqueados e licenciados que fortalecem toda a rede e criam oportunidades de crescimento coletivo.</p>
+          </div>
         </div>
       </div>
       <div class="dif-item">
         <div class="dif-num">04</div>
-        <div class="dif-icon">&#127891;</div>
         <div class="dif-body">
-          <h3>Encontro Nacional de Licenciados</h3>
-          <p>Evento exclusivo que fortalece a rela&ccedil;&atilde;o entre docentes e a rede acad&ecirc;mica Inspirar.</p>
-        </div>
-      </div>
-      <div class="dif-item">
-        <div class="dif-num">05</div>
-        <div class="dif-icon">&#127758;</div>
-        <div class="dif-body">
-          <h3>Maior Comunidade da &Aacute;rea da Sa&uacute;de</h3>
-          <p>Maior comunidade de profissionais e alunos da &aacute;rea da sa&uacute;de no Brasil.</p>
+          <div class="dif-icon-wrap">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="1.5" opacity=".3"/><path d="M16 28l4-4 4 4 8-10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="13" width="28" height="22" rx="3" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div>
+            <h3>8 anos consecutivos premiada</h3>
+            <p>Entre as 5 melhores franquias de cursos do Brasil, segundo a ABF. Reconhecimento que o mercado endossa ano após ano.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- NOSSOS PRODUTOS -->
-<section class="produtos-section" id="produtos">
-  <div class="container">
-    <div class="section-header">
+  <!-- ========== PRODUTOS ========== -->
+  <section class="section" id="produtos" data-reveal>
+    <div class="section__header">
       <span class="eyebrow">Nossos Produtos</span>
-      <h2 class="section-title">Solu&ccedil;&otilde;es educacionais de excel&ecirc;ncia</h2>
+      <h2 class="section__title">Soluções educacionais de <em>excelência</em></h2>
     </div>
-    <div class="produtos-grid">
-      <div class="produto-card">
-        <div class="prod-illustration prod-ill-1">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="20" width="160" height="100" rx="8" fill="#02a8e7" opacity="0.08"/>
-            <rect x="30" y="30" width="140" height="80" rx="6" fill="white" stroke="#02a8e7" stroke-width="1.5"/>
-            <rect x="40" y="40" width="60" height="50" rx="4" fill="#02a8e7" opacity="0.15"/>
-            <line x1="40" y1="45" x2="90" y2="45" stroke="#02a8e7" stroke-width="2"/>
-            <line x1="40" y1="55" x2="80" y2="55" stroke="#02a8e7" stroke-width="1.5" opacity="0.5"/>
-            <line x1="40" y1="63" x2="85" y2="63" stroke="#02a8e7" stroke-width="1.5" opacity="0.5"/>
-            <circle cx="130" cy="60" r="18" fill="#02a8e7" opacity="0.15"/>
-            <text x="130" y="66" text-anchor="middle" font-size="20" fill="#02a8e7">&#127979;</text>
-            <circle cx="60" cy="100" r="8" fill="#02a8e7"/>
-            <circle cx="80" cy="100" r="8" fill="#02a8e7" opacity="0.5"/>
-            <circle cx="100" cy="100" r="8" fill="#02a8e7" opacity="0.3"/>
-          </svg>
+    <div class="prod-grid">
+      <div class="prod-card prod-card--1">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/><path d="M14 43a4 4 0 0 1 4-4H42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 14H42v32H18a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z" stroke="currentColor" stroke-width="2"/><line x1="22" y1="24" x2="36" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="22" y1="30" x2="30" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <h3>P&oacute;s-gradua&ccedil;&atilde;o Presencial</h3>
-        <p>Aulas focadas na pr&aacute;tica intensiva e experi&ecirc;ncia presencial completa com corpo docente especializado.</p>
+        <h3>Pós-graduação Presencial</h3>
+        <p>Imersão completa com aulas práticas desde o primeiro encontro e corpo docente especializado.</p>
+        <span class="prod-tag">Franquia &amp; Slim</span>
       </div>
-      <div class="produto-card">
-        <div class="prod-illustration prod-ill-2">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="20" y="30" width="80" height="60" rx="6" fill="#0a0a0a"/>
-            <rect x="25" y="35" width="70" height="50" rx="4" fill="#02a8e7" opacity="0.2"/>
-            <line x1="30" y1="45" x2="80" y2="45" stroke="#02a8e7" stroke-width="1.5"/>
-            <line x1="30" y1="55" x2="70" y2="55" stroke="white" stroke-width="1" opacity="0.5"/>
-            <circle cx="55" cy="68" r="6" fill="#02a8e7"/>
-            <rect x="25" y="90" width="70" height="6" rx="3" fill="#333"/>
-            <path d="M60 60 Q110 50 140 60" stroke="#02a8e7" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
-            <rect x="120" y="35" width="60" height="55" rx="6" fill="white" stroke="#02a8e7" stroke-width="1.5"/>
-            <circle cx="150" cy="60" r="14" fill="#02a8e7" opacity="0.15"/>
-            <text x="150" y="65" text-anchor="middle" font-size="16" fill="#02a8e7">&#128187;</text>
-          </svg>
+      <div class="prod-card prod-card--2">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/><rect x="8" y="14" width="40" height="26" rx="3" stroke="currentColor" stroke-width="2"/><line x1="20" y1="44" x2="36" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="28" y1="40" x2="28" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 26l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>P&oacute;s-gradua&ccedil;&atilde;o Semi-presencial</h3>
-        <p>O equil&iacute;brio perfeito entre a flexibilidade do digital e a imers&atilde;o da pr&aacute;tica presencial.</p>
+        <h3>Pós-graduação Semi-presencial</h3>
+        <p>Flexibilidade do digital com a profundidade da prática presencial nos encontros mensais.</p>
+        <span class="prod-tag">Franquia &amp; Slim</span>
       </div>
-      <div class="produto-card">
-        <div class="prod-illustration prod-ill-3">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <rect x="50" y="30" width="100" height="70" rx="4" fill="#02a8e7" opacity="0.1" stroke="#02a8e7" stroke-width="1.5"/>
-            <rect x="60" y="40" width="80" height="8" rx="2" fill="#02a8e7" opacity="0.4"/>
-            <rect x="60" y="54" width="60" height="6" rx="2" fill="#02a8e7" opacity="0.25"/>
-            <rect x="60" y="64" width="70" height="6" rx="2" fill="#02a8e7" opacity="0.25"/>
-            <rect x="60" y="74" width="50" height="6" rx="2" fill="#02a8e7" opacity="0.25"/>
-            <circle cx="40" cy="35" r="12" fill="#02a8e7"/>
-            <text x="40" y="40" text-anchor="middle" font-size="14" fill="white">&#43;</text>
-            <circle cx="160" cy="85" r="12" fill="#0a0a0a"/>
-            <text x="160" y="90" text-anchor="middle" font-size="12" fill="white">&#127891;</text>
-            <path d="M40 47 Q45 80 60 90" stroke="#02a8e7" stroke-width="1.5" fill="none" opacity="0.4"/>
-          </svg>
+      <div class="prod-card prod-card--3">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/><path d="M8 28h8l6 16L34 12l6 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Cursos Inspirar (Extens&atilde;o)</h3>
-        <p>Cursos r&aacute;pidos de aperfei&ccedil;oamento para demandas espec&iacute;ficas do mercado de sa&uacute;de.</p>
+        <h3>Cursos Inspirar</h3>
+        <p>Extensão de curta duração para atualização rápida e focada nas tendências do mercado de saúde.</p>
+        <span class="prod-tag">Franquia &amp; Slim</span>
       </div>
-      <div class="produto-card">
-        <div class="prod-illustration prod-ill-4">
-          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="70" r="45" fill="#02a8e7" opacity="0.08" stroke="#02a8e7" stroke-width="1" stroke-dasharray="4,4"/>
-            <circle cx="100" cy="70" r="30" fill="#02a8e7" opacity="0.15"/>
-            <circle cx="100" cy="70" r="18" fill="#02a8e7"/>
-            <text x="100" y="76" text-anchor="middle" font-size="18" fill="white">&#127919;</text>
-            <circle cx="55" cy="35" r="8" fill="#0a0a0a" opacity="0.15"/>
-            <circle cx="145" cy="35" r="8" fill="#0a0a0a" opacity="0.15"/>
-            <circle cx="55" cy="105" r="8" fill="#0a0a0a" opacity="0.15"/>
-            <circle cx="145" cy="105" r="8" fill="#0a0a0a" opacity="0.15"/>
-          </svg>
+      <div class="prod-card prod-card--4">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/><circle cx="28" cy="28" r="14" stroke="currentColor" stroke-width="2"/><path d="M28 20v8l5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>M&oacute;dulo Tem&aacute;tico</h3>
-        <p>Uma aula da p&oacute;s-gradua&ccedil;&atilde;o comercializada individualmente para interessados no assunto espec&iacute;fico.</p>
+        <h3>Módulo Temático</h3>
+        <p>Aulas avulsas da pós-graduação vendidas para profissionais com interesse pontual em um tema específico.</p>
+        <span class="prod-tag">Franquia &amp; Slim</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SUPORTE E VANTAGENS -->
-<section class="suporte-section" id="suporte">
-  <div class="suporte-inner">
-    <div class="container">
-      <div class="suporte-header">
-        <span class="eyebrow eyebrow-light">Estamos sempre com voc&ecirc;</span>
-        <h2 class="suporte-title">Outras vantagens da nossa rede</h2>
-      </div>
-      <div class="vantagens-grid">
-        <div class="vant-card"><div class="vant-icon">&#129309;</div><h4>Suporte completo ao franqueado</h4></div>
-        <div class="vant-card"><div class="vant-icon">&#128218;</div><h4>Plataforma de treinamento ao franqueado e colaboradores</h4></div>
-        <div class="vant-card"><div class="vant-icon">&#128202;</div><h4>Consultoria de campo especializada</h4></div>
-        <div class="vant-card"><div class="vant-icon">&#128227;</div><h4>Suporte de marketing</h4></div>
-        <div class="vant-card"><div class="vant-icon">&#128640;</div><h4>Equipe de expans&atilde;o</h4></div>
-        <div class="vant-card"><div class="vant-icon">&#128187;</div><h4>Sistema de gest&atilde;o e opera&ccedil;&atilde;o</h4></div>
-        <div class="vant-card"><div class="vant-icon">&#127881;</div><h4>Plataforma omnichannel</h4></div>
-      </div>
+  <!-- ========== MODELOS DE NEGÓCIO ========== -->
+  <section class="section" id="modelos" data-reveal>
+    <div class="section__header">
+      <span class="eyebrow">Modelos de Negócio</span>
+      <h2 class="section__title">Encontre o modelo <em>ideal para você</em></h2>
     </div>
-  </div>
-</section>
-
-<!-- MODELOS DE NEGOCIO -->
-<section class="modelos-section" id="modelos">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Modelos de Neg&oacute;cio</span>
-      <h2 class="section-title">Escolha o modelo ideal para voc&ecirc;</h2>
-      <p class="section-sub">Localiza&ccedil;&atilde;o obrigat&oacute;ria: <strong>f&aacute;cil acesso a restaurantes, estacionamentos e hot&eacute;is</strong>.</p>
-    </div>
-    <div class="modelos-grid-2">
+    <div class="modelos-grid">
       <div class="modelo-card">
-        <div class="modelo-icon">&#128205;</div>
-        <h3 class="modelo-title">Unidade Slim</h3>
-        <p class="modelo-desc">Modelo otimizado com menor estrutura f&iacute;sica, ideal para in&iacute;cio de opera&ccedil;&atilde;o com o mesmo padr&atilde;o de excel&ecirc;ncia acad&ecirc;mica Inspirar.</p>
-        <ul class="modelo-features">
-          <li>&#10003; Localiza&ccedil;&atilde;o: F&aacute;cil acesso a restaurantes, estacionamentos e hot&eacute;is</li>
-          <li>&#10003; Menor capital inicial</li>
-          <li>&#10003; R&aacute;pida implanta&ccedil;&atilde;o</li>
-        </ul>
-        <a href="#hero-form" class="btn btn-primary btn-full" style="margin-top:24px;">Quero ser um franqueado</a>
+        <div class="modelo-badge">Franquia</div>
+        <h3>Unidade Completa</h3>
+        <p>Modelo completo com toda a estrutura de uma faculdade credenciada. Turmas presenciais e semi-presenciais com suporte total da rede.</p>
+        <div class="modelo-financeiro">
+          <div class="fin-item">
+            <span class="fin-label">Taxa de franquia</span>
+            <span class="fin-valor">R$ 50k – 90k</span>
+          </div>
+          <div class="fin-item">
+            <span class="fin-label">Payback</span>
+            <span class="fin-valor">30 – 34 meses</span>
+          </div>
+          <div class="fin-item">
+            <span class="fin-label">Margem líquida média</span>
+            <span class="fin-valor">10% – 31%</span>
+          </div>
+        </div>
+        
       </div>
-      <div class="modelo-card modelo-card-dark">
-        <div class="modelo-badge">Modelo Completo</div>
-        <div class="modelo-icon">&#127979;</div>
-        <h3 class="modelo-title">Franquia</h3>
-        <p class="modelo-desc">A experi&ecirc;ncia completa Inspirar. Estrutura ampla para atender m&uacute;ltiplas turmas simultaneamente com m&aacute;ximo potencial de faturamento.</p>
-        <ul class="modelo-features">
-          <li>&#10003; Localiza&ccedil;&atilde;o: F&aacute;cil acesso a restaurantes, estacionamentos e hot&eacute;is</li>
-          <li>&#10003; M&aacute;ximo potencial de faturamento</li>
-          <li>&#10003; Estrutura robusta e completa</li>
-        </ul>
-        <a href="#hero-form" class="btn btn-white btn-full" style="margin-top:24px;">Quero ser um franqueado</a>
+      <div class="modelo-card modelo-card--destaque">
+        <div class="modelo-badge modelo-badge--green">Licença Slim</div>
+        <h3>Modelo Slim</h3>
+        <p>Estrutura enxuta para quem quer começar com baixo investimento, foco em extensão e módulos temáticos com alto retorno.</p>
+        <div class="modelo-financeiro">
+          <div class="fin-item">
+            <span class="fin-label">Taxa</span>
+            <span class="fin-valor fin-destaque">A partir de R$ 15k</span>
+          </div>
+          <div class="fin-item">
+            <span class="fin-label">Breakeven</span>
+            <span class="fin-valor fin-destaque">Até 12 meses</span>
+          </div>
+          <div class="fin-item">
+            <span class="fin-label">Payback médio</span>
+            <span class="fin-valor fin-destaque">14 meses</span>
+          </div>
+          <div class="fin-item">
+            <span class="fin-label">Margem de lucro</span>
+            <span class="fin-valor fin-destaque">29% – 42%</span>
+          </div>
+        </div>
+        
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MAPA DO BRASIL INTERATIVO -->
-<section class="mapa-section" id="mapa">
-  <div class="container">
-    <div class="section-header">
+  <!-- ========== VANTAGENS ========== -->
+  <section class="section" id="vantagens" data-reveal>
+    <div class="section__header">
+      <span class="eyebrow">Suporte Total</span>
+      <h2 class="section__title">Estamos sempre <em>com você</em></h2>
+    </div>
+    <div class="prod-grid vant-grid">
+      <div class="prod-card prod-card--v1">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/>
+            <path d="M28 42s-16-7-16-20V15l16-6 16 6v7c0 13-16 20-16 20z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 28l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Suporte completo ao franqueado</h3>
+        <p>Acompanhamento próximo em todas as fases do negócio, do pré-abertura à operação plena.</p>
+      </div>
+      <div class="prod-card prod-card--v2">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/>
+            <path d="M14 38V22l14-8 14 8v16l-14 8-14-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 22l14 8m0 0l14-8m-14 8v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Plataforma de treinamento</h3>
+        <p>Capacitação contínua para franqueados e colaboradores com trilhas de conhecimento da rede.</p>
+      </div>
+      <div class="prod-card prod-card--v3">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/>
+            <path d="M18 40V28m10 12V20m10 20V32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="18" cy="24" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="28" cy="16" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="38" cy="28" r="4" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Consultoria de campo</h3>
+        <p>Consultores especializados visitam sua unidade e entregam diagnósticos e planos de ação objetivos.</p>
+      </div>
+      <div class="prod-card prod-card--v4">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/>
+            <path d="M10 30l22-8v14L10 30z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M32 22l14-5v14l-14-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 36v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Suporte de marketing</h3>
+        <p>Materiais, campanhas e estratégias digitais prontas para você atrair e converter alunos.</p>
+      </div>
+      <div class="prod-card prod-card--v5">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/>
+            <path d="M28 14v28M14 28h28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="28" cy="28" r="16" stroke="currentColor" stroke-width="2"/>
+            <circle cx="28" cy="14" r="3" fill="currentColor"/>
+            <circle cx="44" cy="28" r="3" fill="currentColor"/>
+            <circle cx="28" cy="42" r="3" fill="currentColor"/>
+            <circle cx="14" cy="28" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3>Equipe de expansão</h3>
+        <p>Time dedicado a apoiar o crescimento da sua unidade e a abertura de novas operações.</p>
+      </div>
+      <div class="prod-card prod-card--v6">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/>
+            <rect x="10" y="10" width="36" height="36" rx="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="22" x2="46" y2="22" stroke="currentColor" stroke-width="2"/>
+            <line x1="22" y1="22" x2="22" y2="46" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Sistema de gestão e operação</h3>
+        <p>Tecnologia integrada para gerenciar matrículas, finanças e processos em um só lugar.</p>
+      </div>
+      <div class="prod-card prod-card--v7">
+        <div class="prod-accent"></div>
+        <div class="prod-icon">
+          <svg viewBox="0 0 56 56" fill="none"><rect width="56" height="56" rx="16" fill="currentColor" fill-opacity=".12"/>
+            <rect x="10" y="16" width="20" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
+            <rect x="34" y="22" width="12" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M30 26h4M30 32h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 24h8M16 30h8M16 36h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Plataforma omnichannel</h3>
+        <p>Atendimento e captação integrados entre o digital e o presencial para ampliar o alcance da sua unidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAPA ========== -->
+  <section class="section" id="mapa" data-reveal>
+    <div class="section__header">
       <span class="eyebrow">Presença Nacional</span>
-      <h2 class="section-title">Onde estamos</h2>
-      <p class="section-sub">Clique em um estado para ver as cidades já inauguradas. Estados em azul já possuem unidades.</p>
+      <h2 class="section__title">Onde <em>estamos</em></h2>
+      <p class="section__sub">Selecione um estado para descobrir nossas unidades.</p>
     </div>
     <div class="mapa-wrap">
-      <div class="mapa-svg-wrap" id="map-svg-wrap">
+      <div class="mapa-svg-wrap">
         <svg id="brazil-map" viewBox="0 0 760 840" xmlns="http://www.w3.org/2000/svg">
   <path id="br-AC" data-uf="AC" data-name="Acre" class="state-path" d="M6.4,268.5L124,327.3L122.2,328.4L120.2,330.5L119.2,331.9L117.6,334L115.4,335.6L112.8,335.7L111.3,336.9L109,339L106.5,342L104.2,343.1L102.3,342.7L99.8,343.3L98.8,345.8L97,348.6L94.4,350.6L92,352.2L87.8,350.4L86,350.5L84,350.4L82.1,349.7L80,349.2L77.7,349L76.2,349.2L73.6,349.2L70.6,348.8L67.9,348.8L66.4,349.8L64.4,351.1L61.7,351.7L58.9,349.5L57.6,324L57.2,320.7L57.7,318.6L58.6,317.2L57.1,316.7L55.5,318.7L53.8,320.7L51.6,323.1L47.6,326L44.1,328.5L30.9,324.6L29.2,321.1L27.3,317.7L24.5,317.4L22.4,316.8L13.4,315.2L16.3,311.9L17.5,307.3L15.2,302.7L12,298.9L10,295.6L7.6,292.2L6,286.1L3.7,283.5L4.2,279.9L0.9,277.1L0.5,272.1L3.3,271.5L3.9,268.3Z" />
   <path id="br-AL" data-uf="AL" data-name="Alagoas" class="state-path" d="M648.6,303.4L651.6,304.5L653.9,305.4L652.6,308L651.9,309.8L651.2,311.4L650.2,313.2L649.3,314.1L648.1,315.9L647.6,316.9L646.5,318.4L645.6,319.4L644.8,321.5L643.4,322.3L642,324.3L640.3,327.5L638.4,330.5L637.1,332.1L635.3,334.4L634.5,336.5L633,339.5L630.9,337.9L629.3,334.6L626.9,334L624.6,331.8L623.5,329.7L620.5,326.9L616.7,324.1L611.2,321.1L608.9,319.9L605.5,317.3L603.1,316.5L602.7,313.5L605.1,310.8L606.7,309.5L608.4,307.1L608.9,305.2L610.2,304.7L611,306.1L612,307.6L614.2,306.5L617.3,309.2L618.8,311.6L619.9,312.9L621.9,313.8L623.9,315L625.3,313.2L628.9,314.1L629.9,314.3L631.6,312.4L632.8,312L634.4,311.1L635.6,311L635.6,309.4L637.1,308.1L638.6,305.4L641,304.5L642.9,304.2L643.7,305.2L646.1,304.4L647.5,303.5L648.6,303.4Z" />
@@ -331,93 +395,111 @@
   <path id="br-DF" data-uf="DF" data-name="Distrito Federal" class="state-path" d="M449.2,458.7L449.1,459L446.6,459L440.7,459L436.7,459L433.1,459L433,458.1L433.2,457.2L433.3,456.7L433.2,456.4L433,456.2L432.9,455.5L432.9,455.2L432.8,454.5L433.5,453.5L433.8,453L434.1,452L433.6,450.5L434.1,449.7L434.3,447.1L444,447.1L446.6,447.1L447.4,448.1L447.9,448.6L448.1,448.8L448.7,448.9L449,449.2L448.9,450.3L448.8,451L449.2,451.3L449.1,452L449.1,452.2L449,452.6L448.9,453.1L448.7,453.5L448.6,453.7L448.5,454.1L448.3,454.2L448.2,454.7L448.2,455L448.1,455.7L448.3,455.9L448.4,456.4L448.2,456.5L448.1,457.1L448.1,457.2L448.2,457.5L448.2,457.9L448.6,458L448.7,458.1L448.8,458.2L449,458.5L449.1,458.7Z" />
 </svg>
       </div>
-      <div class="mapa-info-panel" id="mapa-panel">
-        <div id="mapa-estado-nome">Selecione um estado no mapa</div>
+      <div class="mapa-info-panel">
+        <div id="mapa-estado-nome">Selecione um estado</div>
         <ul id="mapa-cidades-lista" class="mapa-cidades">
-          <li class="mapa-hint">Clique em um estado para ver as cidades com unidades Inspirar.</li>
+          <li class="mapa-hint">Clique em um estado no mapa.</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROCESSO SIMPLES (Vertical) -->
-<section class="processo-section" id="processo">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Processo Simples</span>
-      <h2 class="section-title">Do interesse &agrave; abertura em 5 passos</h2>
-    </div>
-    <div class="steps-vertical">
-      <div class="step-v"><div class="step-v-num">01</div><div class="step-v-body"><h3>Preencha o formul&aacute;rio</h3><p>Nossa equipe entra em contato em at&eacute; 24h.</p></div></div>
-      <div class="step-v"><div class="step-v-num">02</div><div class="step-v-body"><h3>Apresenta&ccedil;&atilde;o</h3><p>Conhe&ccedil;a o modelo e o potencial da sua regi&atilde;o.</p></div></div>
-      <div class="step-v"><div class="step-v-num">03</div><div class="step-v-body"><h3>An&aacute;lise</h3><p>Avaliamos o perfil e viabilidade do mercado local.</p></div></div>
-      <div class="step-v"><div class="step-v-num">04</div><div class="step-v-body"><h3>Contrato</h3><p>Formalizamos a parceria. Voc&ecirc; &eacute; oficialmente franqueado.</p></div></div>
-      <div class="step-v"><div class="step-v-num">05</div><div class="step-v-body"><h3>Abertura</h3><p>Suporte completo para montar e inaugurar sua unidade.</p></div></div>
-    </div>
-    <div class="steps-cta"><a href="#hero-form" class="btn btn-primary btn-lg">Quero ser um franqueado</a></div>
-  </div>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section class="depoimentos" id="depoimentos">
-  <div class="container">
-    <div class="section-header">
+  <!-- ========== DEPOIMENTOS ========== -->
+  <section class="section" id="depoimentos" data-reveal>
+    <div class="section__header">
       <span class="eyebrow">Depoimentos</span>
-      <h2 class="section-title">O que nossos franqueados dizem</h2>
+      <h2 class="section__title">O que dizem nossos <em>franqueados</em></h2>
     </div>
-    <div class="dep-grid">
-      <div class="dep-card dep-card-featured">
-        <div class="dep-quote">&ldquo;</div>
-        <p class="dep-text">Abri minha unidade em Curitiba h&aacute; 4 anos e desde o primeiro semestre j&aacute; estava recuperando meu investimento. O suporte da Inspirar &eacute; impressionante.</p>
-        <div class="dep-author"><img src="IMG_7433.JPG" alt="Mariana" class="dep-avatar"/><div><strong>Mariana Costa</strong><span>Franqueada &mdash; Curitiba, PR</span><div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
-      </div>
+    <div class="dep-grid dep-grid--2">
       <div class="dep-card">
-        <div class="dep-quote">&ldquo;</div>
-        <p class="dep-text">Portf&oacute;lio imenso de cursos na &aacute;rea da sa&uacute;de. Em 22 meses j&aacute; tinha recuperado tudo que investi. A Inspirar tem uma estrutura impec&aacute;vel.</p>
-        <div class="dep-author"><img src="IMG_7433.JPG" alt="Ricardo" class="dep-avatar"/><div><strong>Ricardo Almeida</strong><span>Franqueado &mdash; Porto Alegre, RS</span><div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
-      </div>
-      <div class="dep-card">
-        <div class="dep-quote">&ldquo;</div>
-        <p class="dep-text">Como profissional da sa&uacute;de, escolhi a Inspirar porque acredito no impacto da educa&ccedil;&atilde;o de qualidade. O retorno superou minhas expectativas.</p>
-        <div class="dep-author"><img src="IMG_7433.JPG" alt="Camila" class="dep-avatar"/><div><strong>Camila Santos</strong><span>Franqueada &mdash; S&atilde;o Paulo, SP</span><div class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-inner">
-      
-              <div class="footer-selos">
-          <img src="selo2.png.webp" alt="Premiações e Selos" class="selo-img"/>
+        <p class="dep-text">"Quando decidi adquirir uma franquia da Inspirar, enxergava essa oportunidade principalmente como um investimento. Com o passar dos anos, percebi que havia encontrado muito mais do que um negócio: encontrei um propósito profissional. Depois de 10 anos, continuo com a mesma convicção: escolhi fazer parte de uma instituição séria, ética e comprometida com pessoas."</p>
+        <div class="dep-author">
+          <img src="franqueado rafael.png" alt="Rafael Leonel" class="dep-avatar">
+          <div>
+            <strong>Rafael Leonel</strong>
+            <span>Franqueado há 10 anos — Campo Grande e Dourados (MS)</span>
+          </div>
         </div>
+      </div>
+      <div class="dep-card">
+        <p class="dep-text">"Ser um franqueado da Faculdade Inspirar é uma atividade diária, e constante, de aprendizado. Ao longo dos últimos 13 anos venho exercendo diversas atividades dentro do sistema de franquia. Hoje estou absolutamente convicto que estou no lugar certo, fazendo a coisa certa e com as pessoas certas."</p>
+        <div class="dep-author">
+          <img src="franqueado euclides.png" alt="Euclides Poubel" class="dep-avatar">
+          <div>
+            <strong>Euclides Poubel</strong>
+            <span>Franqueado há 13 anos</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2026 Faculdade Inspirar.</p><a href="https://www.inspirar.com.br/politica-de-privacidade/" target="_blank">Pol&iacute;tica de Privacidade</a></div>
-  </div>
-</footer>
+  </section>
 
-<!-- SPACER + FIXED BAR -->
-<div id="fixed-bar-spacer" style="height:0"></div>
-<div class="fixed-bar" id="fixed-bar">
-  <div class="fixed-bar-inner">
-    <p><strong>Faculdade Inspirar</strong> &mdash; Fale com um consultor agora</p>
-    <a href="#hero-form" class="btn btn-primary">Quero ser um franqueado &#8594;</a>
-  </div>
-</div>
+  <!-- ========== PROCESSO SIMPLES ========== -->
+  <section class="section" id="processo" data-reveal>
+    <div class="section__header">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="section__title">Um processo <em>simples</em></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Preencha o formulário</h3>
+        <p>Nossa equipe entra em contato em até 24h após o preenchimento.</p>
+      </div>
+      <div class="step-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>Conheça a proposta</h3>
+        <p>Apresentamos o modelo de negócio e tiramos todas as suas dúvidas.</p>
+      </div>
+      <div class="step-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Assine o contrato</h3>
+        <p>Formalize a parceria e inicie o onboarding completo da sua unidade.</p>
+      </div>
+      <div class="step-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3>Abra sua unidade</h3>
+        <p>Com suporte total da rede, inaugure e comece a impactar vidas na sua cidade.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="#hero" class="btn-primary">Quero ser franqueado <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </section>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modal-overlay" style="display:none">
-  <div class="modal-box">
-    <div class="modal-icon">&#127881;</div>
-    <h3>Interesse registrado!</h3>
-    <p>Nossa equipe entrar&aacute; em contato em at&eacute; 24 horas.</p>
-    <button class="btn btn-primary" id="modal-close">Fechar</button>
-  </div>
-</div>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="selo2.png.webp" alt="Premiações e Selos" class="selo-img"/>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Faculdade Inspirar. Todos os direitos reservados.</p>
+      <a href="https://www.inspirar.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>
+    </div>
+  </footer>
 
-<script src="script.js"></script>
+  <!-- FIXED CTA BAR -->
+  <div id="fixed-bar-spacer" style="height:0"></div>
+  <div class="fixed-bar" id="fixed-bar">
+    <div class="fixed-bar-inner">
+      <p><strong>Faculdade Inspirar</strong> — Seja um franqueado da maior rede de saúde do Brasil</p>
+      <a href="#hero" class="btn-primary">Quero ser franqueado <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;align-items:center;justify-content:center;backdrop-filter:blur(8px)">
+    <div style="background:var(--bg-card);border:1px solid var(--border-mid);border-radius:var(--radius-lg);padding:48px;text-align:center;max-width:400px;backdrop-filter:blur(20px)">
+      <div style="font-size:3rem;margin-bottom:16px">✅</div>
+      <h3 style="margin-bottom:12px;color:var(--text-heading)">Recebemos seu contato!</h3>
+      <p>Nossa equipe entrará em contato em até 24 horas.</p>
+      <button id="modal-close" class="btn-primary" style="margin-top:28px">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
