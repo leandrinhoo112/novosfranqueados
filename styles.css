@@ -186,15 +186,12 @@ a:hover { color: var(--green); }
 
 /* MAPA */
 .mapa-wrap { display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; }
-.mapa-svg-wrap {
-  background: var(--bg-card); border-radius: var(--radius-xl); padding: 24px;
-  border: 1px solid var(--border-subtle); backdrop-filter: blur(12px);
-}
-#brazil-map { width: 100%; height: auto; display: block; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); }
-.state-path { fill: #1a1e1a; stroke: #1a1e1a; stroke-width: 3px; stroke-linejoin: round; stroke-linecap: round; transition: fill 0.3s, stroke 0.3s; cursor: pointer; vector-effect: non-scaling-stroke; }
-.state-path.has-city { fill: rgba(155,225,93,0.3); stroke: var(--green); }
-.state-path:hover { fill: var(--green-border); stroke: var(--green); }
-.state-path.active { fill: var(--green)!important; stroke: var(--green)!important; filter: drop-shadow(0 2px 8px rgba(155,225,93,0.4)); position: relative; z-index: 3; }
+
+
+
+
+
+
 
 .mapa-info-panel {
   background: var(--bg-card-alt); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 36px;
@@ -479,4 +476,182 @@ a:hover { color: var(--green); }
 }
 @media (max-width: 560px) {
   .vant-grid { grid-template-columns: 1fr; }
+}
+/* ========== SELOS COLORIDOS ========== */
+.selo-img {
+  max-width: 360px; height: auto; opacity: 1;
+  filter: none !important;
+  transition: opacity 0.3s;
+}
+
+/* ========== FORMULÁRIO FIX ========== */
+.hero-form-card form { display: flex; flex-direction: column; gap: 0; }
+.input, .select {
+  display: block; width: 100%; padding: 12px 16px;
+  border-radius: var(--radius-md); border: 1px solid var(--border-mid);
+  background: rgba(255,255,255,.06); color: var(--text-primary);
+  font-size: 14px; font-family: var(--font-sans); outline: none;
+  transition: border-color .2s; margin-bottom: 14px; -webkit-appearance: none;
+}
+.input::placeholder { color: var(--text-dim); }
+.select option { background: #111; color: var(--text-primary); }
+
+/* ========== MODELOS: vertical + ambos verdes ========== */
+.modelo-financeiro {
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+.fin-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle);
+  gap: 12px;
+}
+.fin-item:last-child { border-bottom: none; padding-bottom: 0; }
+.fin-valor { font-size: 14px; text-align: right; }
+.modelo-card { border-color: var(--green-border) !important; }
+.modelo-card--destaque { border-color: var(--green-border) !important; }
+
+/* ========== PILLS VANTAGENS ========== */
+.pills-wrap {
+  display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+  max-width: 960px; margin: 0 auto;
+}
+.pill-item {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 20px; border-radius: var(--radius-pill);
+  background: var(--green-subtle); border: 1px solid var(--green-border);
+  color: var(--text-heading); font-size: 14px; font-weight: 500;
+  transition: background .2s, transform .2s;
+}
+.pill-item:hover { background: rgba(155,225,93,.15); transform: translateY(-2px); }
+.pill-icon {
+  width: 20px; height: 20px; flex-shrink: 0; color: var(--green);
+  display: flex; align-items: center; justify-content: center;
+}
+.pill-icon svg { width: 18px; height: 18px; }
+
+/* ========== DIFERENCIAIS: sem eyebrow ========== */
+#diferenciais .section__header { margin-bottom: 40px; }
+/* ========== MODELOS COM IMAGEM ========== */
+.modelos-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 920px; margin: 0 auto;
+}
+.modelo-card {
+  border-radius: var(--radius-xl); border: 1px solid var(--green-border) !important;
+  background: linear-gradient(170deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  backdrop-filter: blur(16px); overflow: hidden; display: flex; flex-direction: column;
+  transition: transform .3s, box-shadow .3s;
+}
+.modelo-card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+
+.modelo-img-wrap {
+  width: 100%; height: 200px; overflow: hidden; position: relative; flex-shrink: 0;
+}
+.modelo-img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 35%;
+  transition: transform .6s ease;
+}
+.modelo-card:hover .modelo-img { transform: scale(1.04); }
+.modelo-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(8,8,8,.6) 100%);
+}
+
+.modelo-img-placeholder {
+  background: rgba(155,225,93,.04);
+  border-bottom: 1px solid var(--green-border);
+  display: flex; align-items: center; justify-content: center;
+}
+.modelo-placeholder-content {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: var(--green); opacity: .4;
+}
+.modelo-placeholder-content svg { width: 48px; height: 48px; }
+.modelo-placeholder-content span { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+.modelo-body {
+  padding: 28px; display: flex; flex-direction: column; gap: 14px; flex: 1;
+}
+.modelo-badge {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-pill);
+  background: var(--border-subtle); color: var(--text-muted); align-self: flex-start;
+}
+.modelo-badge--green {
+  background: var(--green-subtle); color: var(--green-text); border: 1px solid var(--green-border);
+}
+.modelo-card h3 { font-size: 1.25rem; color: var(--text-heading); font-weight: 700; }
+.modelo-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+.modelo-financeiro {
+  display: flex; flex-direction: column; gap: 0;
+  background: rgba(255,255,255,.03); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md); overflow: hidden; margin-top: 4px;
+}
+.fin-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 11px 16px; border-bottom: 1px solid var(--border-subtle); gap: 12px;
+}
+.fin-item:last-child { border-bottom: none; }
+.fin-label { font-size: 11.5px; font-weight: 600; letter-spacing: .04em; color: var(--text-muted); text-transform: uppercase; }
+.fin-valor { font-size: 14px; font-weight: 700; color: var(--text-heading); text-align: right; flex-shrink: 0; }
+.fin-destaque { color: var(--green); }
+
+@media (max-width: 760px) {
+  .modelos-grid { grid-template-columns: 1fr; }
+}
+/* ========== LEAFLET MAP ========== */
+.leaflet-map-wrap {
+  width: 100%; height: 520px; border-radius: var(--radius-xl);
+  overflow: hidden; border: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+/* Override Leaflet UI para combinar com o dark theme */
+.leaflet-control-zoom a {
+  background: rgba(8,10,8,0.85) !important;
+  color: var(--green) !important;
+  border-color: var(--border-mid) !important;
+  backdrop-filter: blur(8px);
+  font-weight: 700;
+}
+.leaflet-control-zoom a:hover { background: rgba(155,225,93,0.15) !important; }
+.leaflet-control-attribution {
+  background: rgba(8,8,8,0.7) !important;
+  color: var(--text-dim) !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(4px);
+}
+.leaflet-control-attribution a { color: var(--green-text) !important; }
+.leaflet-container { background: #080808 !important; }
+
+/* mapa-wrap layout */
+.mapa-wrap { display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start; }
+
+@media (max-width: 900px) {
+  .mapa-wrap { grid-template-columns: 1fr; }
+  .leaflet-map-wrap { height: 380px; }
+}
+/* ========== LEAFLET POPUP + LEGENDA ========== */
+.insp-popup .leaflet-popup-content-wrapper {
+  background: rgba(8,10,8,0.92) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5) !important;
+  backdrop-filter: blur(12px);
+  padding: 0 !important;
+}
+.insp-popup .leaflet-popup-content { margin: 12px 16px !important; }
+.insp-popup .leaflet-popup-tip { background: rgba(8,10,8,0.92) !important; }
+
+.map-legend {
+  background: rgba(8,10,8,0.85);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  color: #c9cfc9;
+  backdrop-filter: blur(8px);
+  line-height: 1.8;
 }
