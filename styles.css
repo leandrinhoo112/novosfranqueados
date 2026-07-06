@@ -655,3 +655,11 @@ a:hover { color: var(--green); }
   backdrop-filter: blur(8px);
   line-height: 1.8;
 }
+/* Overrides to make all product cards green */
+.product-card {
+  border-top: 2px solid var(--green) !important;
+}
+
+/* === PRODUCTS SECTION: todos os cartões verdes === */
+.prod-card { border-top-color: var(--green) !important; }
+.prod-accent { background: var(--green) !important; }

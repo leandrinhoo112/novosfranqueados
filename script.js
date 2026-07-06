@@ -133,7 +133,7 @@
   const slims = ['dourados','fortaleza','ipatinga','joinville','maceió','parauapebas',
                  'salvador','santo andré','teresina','santos'];
   function normalize(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
-  function getType(c){ return slims.includes(normalize(c)) ? 'Licença Slim' : 'Franquia'; }
+  function getType(c){ return slims.includes(normalize(c)) ? 'Slim' : 'Franquia'; }
 
   // ── Mapa ──────────────────────────────────────────────────
   const map = L.map('leaflet-map', {
@@ -219,7 +219,7 @@
         cities.forEach(c => {
           const isSlim = slims.includes(normalize(c.nome));
           const icon = isSlim ? iconSlim : iconFranquia;
-          const label = isSlim ? 'Licença Slim' : 'Franquia';
+          const label = isSlim ? 'Slim' : 'Franquia';
           L.marker([c.lat, c.lng], { icon })
             .bindPopup(
               '<div style="font-family:Inter,sans-serif;font-size:13px;line-height:1.5">' +
@@ -243,8 +243,9 @@
     d.innerHTML =
       '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#9be15d;margin-right:6px;box-shadow:0 0 6px #9be15d"></span>Franquia' +
       '<br>' +
-      '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#50b4e6;margin-right:6px;box-shadow:0 0 6px #50b4e6;margin-top:6px"></span>Licença Slim';
+      '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#50b4e6;margin-right:6px;box-shadow:0 0 6px #50b4e6;margin-top:6px"></span>Slim';
     return d;
   };
   legend.addTo(map);
 })();
+
