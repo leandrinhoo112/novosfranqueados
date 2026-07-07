@@ -1,4 +1,4 @@
-﻿(function initNavbar() {
+(function initNavbar() {
   const navbar = document.querySelector('.navbar__inner');
   if (!navbar) return;
   window.addEventListener('scroll', () => {
@@ -170,14 +170,28 @@
     lista.innerHTML = '';
     const cities = cidadesData[uf];
     if (cities && cities.length) {
-      cities.forEach(c => {
+            cities.forEach(c => {
         const li = document.createElement('li');
         const t = getType(c.nome);
-        li.textContent = c.nome;
-        const span = document.createElement('span');
-        span.className = 'city-type';
-        span.textContent = ' — ' + t;
-        li.appendChild(span);
+        const dotColor = t === 'Slim' ? '#50b4e6' : '#9be15d';
+        
+        li.style.display = 'flex';
+        li.style.alignItems = 'center';
+        
+        const dot = document.createElement('span');
+        dot.style.cssText = `display:inline-block;width:8px;height:8px;border-radius:50%;background:${dotColor};margin-right:8px;flex-shrink:0;box-shadow:0 0 5px ${dotColor}`;
+        
+        const nome = document.createElement('span');
+        nome.textContent = c.nome;
+        
+        const tipo = document.createElement('span');
+        tipo.className = 'city-type';
+        tipo.style.color = dotColor;
+        tipo.textContent = ' — ' + t;
+        
+        li.appendChild(dot);
+        li.appendChild(nome);
+        li.appendChild(tipo);
         lista.appendChild(li);
       });
     } else {
@@ -248,4 +262,5 @@
   };
   legend.addTo(map);
 })();
+
 

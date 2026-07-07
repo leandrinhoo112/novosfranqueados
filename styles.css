@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --bg: #080808;
@@ -261,7 +261,7 @@ a:hover { color: var(--green); }
 
 /* ========== MODELOS DE NEGÓCIO ========== */
 .modelos-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 480px; margin: 0 auto;
 }
 .modelo-card {
   padding: 36px; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);
@@ -534,7 +534,7 @@ a:hover { color: var(--green); }
 #diferenciais .section__header { margin-bottom: 40px; }
 /* ========== MODELOS COM IMAGEM ========== */
 .modelos-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 920px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 480px; margin: 0 auto;
 }
 .modelo-card {
   border-radius: var(--radius-xl); border: 1px solid var(--green-border) !important;
@@ -663,3 +663,4 @@ a:hover { color: var(--green); }
 /* === PRODUCTS SECTION: todos os cartões verdes === */
 .prod-card { border-top-color: var(--green) !important; }
 .prod-accent { background: var(--green) !important; }
+
