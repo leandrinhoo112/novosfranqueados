@@ -61,11 +61,32 @@
     });
   }
   form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (modal) modal.style.display = 'flex';
-    form.reset();
-  });
-  if (modalClose && modal) {
+      // Define _next para voltar a esta pagina
+      const nextInput = form.querySelector('input[name="_next"]');
+      if (nextInput) nextInput.value = window.location.href;
+
+      // Tenta AJAX primeiro (funciona em servidor web)
+      const formData = new FormData(form);
+
+      e.preventDefault();
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(r => r.json())
+      .then(data => {
+        console.log('Lead enviado com sucesso:', data);
+        if (modal) modal.style.display = 'flex';
+        form.reset();
+      })
+      .catch(err => {
+        // Fallback: submit padrao POST (redireciona p/ FormSubmit)
+        console.warn('AJAX falhou, usando POST padrao:', err);
+        form.submit();
+      });
+    });  if (modalClose && modal) {
     modalClose.addEventListener('click', () => modal.style.display = 'none');
     modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
   }

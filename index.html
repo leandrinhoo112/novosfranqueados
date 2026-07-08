@@ -32,7 +32,7 @@
   <!-- ========== HERO ========== -->
   <section class="hero-section" id="hero">
     <div class="hero-bg">
-      <img src="hall.jpeg" alt="Fundo Inspirar" class="hero-img">
+      <img src="Inspirar - @fabianeg.fotografia-137.jpg" alt="Fundo Inspirar" class="hero-img">
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content-wrapper">
@@ -43,22 +43,27 @@
       </div>
       <div class="hero-form-card" data-reveal>
         <h3 style="margin-bottom:24px;font-size:1.15rem;color:var(--text-heading)">Quero ser franqueado</h3>
-        <form id="hero-form-el">
+        <form id="hero-form-el" action="https://formsubmit.co/gabrielle.carvalho@inspirar.com.br" method="POST">
+          <input type="hidden" name="_cc" value="gabrielle.griz@inspirar.com.br">
+          <input type="hidden" name="_subject" value="Novo Lead - Franquia Inspirar Slim">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="">
           <label class="form-label">Nome completo</label>
-          <input type="text" class="input" placeholder="Seu nome" required>
+          <input type="text" name="Nome" class="input" placeholder="Seu nome" required>
           <label class="form-label">E-mail</label>
-          <input type="email" class="input" placeholder="seu@email.com" required>
+          <input type="email" name="Email" class="input" placeholder="seu@email.com" required>
           <label class="form-label">Celular</label>
-          <input type="tel" class="input" id="hf-tel" placeholder="(00) 00000-0000" required>
+          <input type="tel" name="Celular" class="input" id="hf-tel" placeholder="(00) 00000-0000" required>
           <label class="form-label">Quanto espera investir?</label>
-          <select class="select" required>
+          <select name="Investimento" class="select" required>
             <option value="">Selecione...</option>
-            <option>Até R$ 100.000</option>
+            <option>At&#233; R$ 100.000</option>
             <option>R$ 100.000 a R$ 300.000</option>
             <option>Mais de R$ 300.000</option>
           </select>
           <label class="form-label">Cidade de interesse</label>
-          <input type="text" class="input" placeholder="Ex: São Paulo" required>
+          <input type="text" name="Cidade" class="input" placeholder="Ex: S&#227;o Paulo" required>
           <button type="submit" class="btn-primary" style="width:100%;margin-top:8px;justify-content:center">
             Quero ser franqueado
             <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -208,11 +213,9 @@
     </div>
     <div class="modelos-grid">
       <div class="modelo-card">
-        <div class="modelo-img-wrap modelo-img-placeholder">
-          <div class="modelo-placeholder-content">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.5" opacity=".3"/><rect x="12" y="14" width="24" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="22" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 34l8-8 5 5 4-4 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Foto em breve</span>
-          </div>
+        <div class="modelo-img-wrap">
+          <img src="slim.png" alt="Modelo Slim Inspirar" class="modelo-img">
+          <div class="modelo-img-overlay"></div>
         </div>
         <div class="modelo-body">
           <div class="modelo-badge modelo-badge--green">Slim</div>
