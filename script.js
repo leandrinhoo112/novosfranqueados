@@ -60,38 +60,37 @@
       tel.value = v;
     });
   }
+
   form.addEventListener('submit', e => {
-      // Define _next para voltar a esta pagina
-      const nextInput = form.querySelector('input[name="_next"]');
-      if (nextInput) nextInput.value = window.location.href;
+    e.preventDefault();
+    const formData = new FormData(form);
 
-      // Tenta AJAX primeiro (funciona em servidor web)
-      const formData = new FormData(form);
-
-      e.preventDefault();
-
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(r => r.json())
-      .then(data => {
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.success) {
         console.log('Lead enviado com sucesso:', data);
         if (modal) modal.style.display = 'flex';
         form.reset();
-      })
-      .catch(err => {
-        // Fallback: submit padrao POST (redireciona p/ FormSubmit)
-        console.warn('AJAX falhou, usando POST padrao:', err);
-        form.submit();
-      });
-    });  if (modalClose && modal) {
+      } else {
+        console.error('Erro Web3Forms:', data);
+        alert('Erro ao enviar. Tente novamente.');
+      }
+    })
+    .catch(err => {
+      console.error('Erro de rede:', err);
+      alert('Erro de conexao. Tente novamente.');
+    });
+  });
+
+  if (modalClose && modal) {
     modalClose.addEventListener('click', () => modal.style.display = 'none');
     modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
   }
 })();
-
 
 (function initMap() {
   const mapEl = document.getElementById('leaflet-map');
