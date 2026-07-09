@@ -63,28 +63,39 @@
 
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const formData = new FormData(form);
 
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData
-    })
-    .then(r => r.json())
-    .then(data => {
-      if (data.success) {
-        console.log('Lead enviado com sucesso:', data);
+    const keys = [
+      'e3f46224-139f-4764-8608-9b424a80d934', // Carvalho
+      'bc6005a5-4631-4432-b20f-58b1b3fe0a76', // Griz
+      '5b05bb2e-1260-476b-9a11-205f18a00976'  // Leandro
+    ];
+
+    const requests = keys.map(key => {
+      const fd = new FormData(form);
+      fd.set('access_key', key);
+      return fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: fd
+      }).then(r => r.json());
+    });
+
+    Promise.all(requests)
+    .then(results => {
+      const success = results.some(res => res.success);
+      if (success) {
+        console.log('Leads enviados com sucesso:', results);
         if (modal) modal.style.display = 'flex';
         form.reset();
       } else {
-        console.error('Erro Web3Forms:', data);
+        console.error('Erro Web3Forms:', results);
         alert('Erro ao enviar. Tente novamente.');
       }
     })
     .catch(err => {
-      console.error('Erro de rede:', err);
-      alert('Erro de conexao. Tente novamente.');
+        console.error('Erro de rede:', err);
+        alert('Erro de conexão. Tente novamente.');
+      });
     });
-  });
 
   if (modalClose && modal) {
     modalClose.addEventListener('click', () => modal.style.display = 'none');
