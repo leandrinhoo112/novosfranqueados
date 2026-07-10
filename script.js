@@ -45,15 +45,15 @@
 })();
 
 (function initForm() {
-  const form = document.getElementById('hero-form-el');
-  const tel = document.getElementById('hf-tel');
-  const modal = document.getElementById('modal-overlay');
-  const modalClose = document.getElementById('modal-close');
+  var form = document.getElementById('hero-form-el');
+  var tel = document.getElementById('hf-tel');
+  var modal = document.getElementById('modal-overlay');
+  var modalClose = document.getElementById('modal-close');
   if (!form) return;
 
   if (tel) {
-    tel.addEventListener('input', () => {
-      let v = tel.value.replace(/\D/g, '').slice(0, 11);
+    tel.addEventListener('input', function() {
+      var v = tel.value.replace(/\D/g, '').slice(0, 11);
       if (v.length >= 7) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
       else if (v.length >= 3) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
       else if (v.length) v = '(' + v;
@@ -61,56 +61,58 @@
     });
   }
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const keys = [
-      'e3f46224-139f-4764-8608-9b424a80d934', // Carvalho
-      'bc6005a5-4631-4432-b20f-58b1b3fe0a76', // Griz
-      '5b05bb2e-1260-476b-9a11-205f18a00976'  // Leandro
+    var keys = [
+      'e3f46224-139f-4764-8608-9b424a80d934',
+      'bc6005a5-4631-4432-b20f-58b1b3fe0a76',
+      '5b05bb2e-1260-476b-9a11-205f18a00976',
+      '038cfd33-9db4-49e6-a125-e84c3361b40d'
     ];
 
-    const requests = keys.map(key => {
-      const fd = new FormData(form);
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
+
+    var requests = keys.map(function(key) {
+      var fd = new FormData(form);
       fd.set('access_key', key);
       return fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: fd
-      }).then(r => r.json());
+      }).then(function(r) { return r.json(); });
     });
 
-    Promise.all(requests)
-    .then(results => {
-      const success = results.some(res => res.success);
+    Promise.all(requests).then(function(results) {
+      var success = results.some(function(res) { return res.success; });
+      if (btn) { btn.disabled = false; btn.textContent = 'Quero ser franqueado'; }
       if (success) {
-        console.log('Leads enviados com sucesso:', results);
         if (modal) modal.style.display = 'flex';
         form.reset();
       } else {
-        console.error('Erro Web3Forms:', results);
         alert('Erro ao enviar. Tente novamente.');
       }
-    })
-    .catch(err => {
-        console.error('Erro de rede:', err);
-        alert('Erro de conexão. Tente novamente.');
-      });
+    }).catch(function() {
+      if (btn) { btn.disabled = false; btn.textContent = 'Quero ser franqueado'; }
+      alert('Erro de conexao. Verifique sua internet e tente novamente.');
     });
+  });
 
   if (modalClose && modal) {
-    modalClose.addEventListener('click', () => modal.style.display = 'none');
-    modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+    modalClose.addEventListener('click', function() { modal.style.display = 'none'; });
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) modal.style.display = 'none';
+    });
   }
 })();
 
 (function initMap() {
-  const mapEl = document.getElementById('leaflet-map');
-  const titulo = document.getElementById('mapa-estado-nome');
-  const lista  = document.getElementById('mapa-cidades-lista');
+  var mapEl = document.getElementById('leaflet-map');
+  var titulo = document.getElementById('mapa-estado-nome');
+  var lista  = document.getElementById('mapa-cidades-lista');
   if (!mapEl || typeof L === 'undefined') return;
 
-  // ── Cidades com coordenadas ────────────────────────────────
-  const cidadesData = {
+  var cidadesData = {
     SC: [
       { nome: 'Balneário Camboriú', lat: -26.9907, lng: -48.6348 },
       { nome: 'Blumenau',           lat: -26.9195, lng: -49.0661 },
@@ -122,32 +124,32 @@
       { nome: 'Campinas',                 lat: -22.9068, lng: -47.0626 },
       { nome: 'Guarulhos',                lat: -23.4538, lng: -46.5333 },
       { nome: 'Ribeirão Preto',           lat: -21.1691, lng: -47.8103 },
-      { nome: 'Santo André',             lat: -23.6639, lng: -46.5383 },
+      { nome: 'Santo André',              lat: -23.6639, lng: -46.5383 },
       { nome: 'Santos',                   lat: -23.9608, lng: -46.3337 },
-      { nome: 'São José do Rio Preto',   lat: -20.8113, lng: -49.3758 },
-      { nome: 'São José dos Campos',     lat: -23.1896, lng: -45.8841 },
-      { nome: 'São Paulo - Borba Gato',  lat: -23.5600, lng: -46.6900 },
-      { nome: 'São Paulo - Vila Mariana',lat: -23.5884, lng: -46.6352 },
-      { nome: 'Sorocaba',                lat: -23.5015, lng: -47.4526 }
+      { nome: 'São José do Rio Preto',    lat: -20.8113, lng: -49.3758 },
+      { nome: 'São José dos Campos',      lat: -23.1896, lng: -45.8841 },
+      { nome: 'São Paulo - Borba Gato',   lat: -23.5600, lng: -46.6900 },
+      { nome: 'São Paulo - Vila Mariana', lat: -23.5884, lng: -46.6352 },
+      { nome: 'Sorocaba',                 lat: -23.5015, lng: -47.4526 }
     ],
     PA: [
-      { nome: 'Belém',       lat: -1.4558,  lng: -48.4902 },
-      { nome: 'Parauapebas', lat: -6.0676,  lng: -49.9015 }
+      { nome: 'Belém',        lat: -1.4558,  lng: -48.4902 },
+      { nome: 'Parauapebas',  lat: -6.0676,  lng: -49.9015 }
     ],
     MG: [
       { nome: 'Belo Horizonte', lat: -19.9167, lng: -43.9345 },
       { nome: 'Ipatinga',       lat: -19.4681, lng: -42.5378 },
       { nome: 'Uberlândia',     lat: -18.9186, lng: -48.2772 }
     ],
-    DF: [{ nome: 'Brasília', lat: -15.7801, lng: -47.9292 }],
+    DF: [{ nome: 'Brasília',     lat: -15.7801, lng: -47.9292 }],
     MS: [
       { nome: 'Campo Grande', lat: -20.4697, lng: -54.6201 },
       { nome: 'Dourados',     lat: -22.2233, lng: -54.8058 }
     ],
-    MT: [{ nome: 'Cuiabá', lat: -15.6014, lng: -56.0979 }],
+    MT: [{ nome: 'Cuiabá',      lat: -15.6014, lng: -56.0979 }],
     PR: [
-      { nome: 'Curitiba', lat: -25.4294, lng: -49.2713 },
-      { nome: 'Londrina', lat: -23.3045, lng: -51.1696 }
+      { nome: 'Curitiba',  lat: -25.4294, lng: -49.2713 },
+      { nome: 'Londrina',  lat: -23.3045, lng: -51.1696 }
     ],
     CE: [{ nome: 'Fortaleza',   lat: -3.7172,  lng: -38.5431 }],
     GO: [{ nome: 'Goiânia',     lat: -16.6869, lng: -49.2648 }],
@@ -161,13 +163,17 @@
     ES: [{ nome: 'Vitória',     lat: -20.3155, lng: -40.3128 }]
   };
 
-  const slims = ['dourados','fortaleza','ipatinga','joinville','maceió','parauapebas',
-                 'salvador','santo andré','teresina','santos'];
-  function normalize(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
-  function getType(c){ return slims.includes(normalize(c)) ? 'Slim' : 'Franquia'; }
+  var slims = ['dourados','fortaleza','ipatinga','joinville','maceio','parauapebas',
+               'salvador','santo andre','teresina','santos'];
 
-  // ── Mapa ──────────────────────────────────────────────────
-  const map = L.map('leaflet-map', {
+  function normalize(s) {
+    return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  function getType(c) {
+    return slims.includes(normalize(c)) ? 'Slim' : 'Franquia';
+  }
+
+  var map = L.map('leaflet-map', {
     center: [-15.0, -52.0], zoom: 4,
     zoomControl: true, scrollWheelZoom: false
   });
@@ -177,7 +183,6 @@
     subdomains: 'abcd', maxZoom: 19
   }).addTo(map);
 
-  // ── Ícones personalizados ──────────────────────────────────
   function makeIcon(color) {
     return L.divIcon({
       className: '',
@@ -185,71 +190,63 @@
       iconSize: [12, 12], iconAnchor: [6, 6], popupAnchor: [0, -8]
     });
   }
-  const iconFranquia = makeIcon('#9be15d');
-  const iconSlim     = makeIcon('#50b4e6');
+  var iconFranquia = makeIcon('#9be15d');
+  var iconSlim     = makeIcon('#50b4e6');
 
-  // ── Estilos dos estados ────────────────────────────────────
-  const styleNormal   = { fillColor:'#1a201a', fillOpacity:1, color:'#2a342a', weight:1.5 };
-  const styleHasCity  = { fillColor:'rgba(155,225,93,0.18)', fillOpacity:1, color:'#9be15d', weight:1.5 };
-  const styleActive   = { fillColor:'rgba(155,225,93,0.45)', fillOpacity:1, color:'#9be15d', weight:2.5 };
-  const styleHover    = { fillColor:'rgba(155,225,93,0.30)', fillOpacity:1, color:'#9be15d', weight:2 };
+  var styleNormal  = { fillColor:'#1a201a', fillOpacity:1, color:'#2a342a', weight:1.5 };
+  var styleHasCity = { fillColor:'rgba(155,225,93,0.18)', fillOpacity:1, color:'#9be15d', weight:1.5 };
+  var styleActive  = { fillColor:'rgba(155,225,93,0.45)', fillOpacity:1, color:'#9be15d', weight:2.5 };
+  var styleHover   = { fillColor:'rgba(155,225,93,0.30)', fillOpacity:1, color:'#9be15d', weight:2 };
 
-  let activeLayer = null;
+  var activeLayer = null;
 
   function showPanel(uf, name) {
     titulo.textContent = name;
     lista.innerHTML = '';
-    const cities = cidadesData[uf];
+    var cities = cidadesData[uf];
     if (cities && cities.length) {
-            cities.forEach(c => {
-        const li = document.createElement('li');
-        const t = getType(c.nome);
-        const dotColor = t === 'Slim' ? '#50b4e6' : '#9be15d';
-        
+      cities.forEach(function(c) {
+        var li = document.createElement('li');
+        var t = getType(c.nome);
+        var dotColor = t === 'Slim' ? '#50b4e6' : '#9be15d';
         li.style.display = 'flex';
         li.style.alignItems = 'center';
-        
-        const dot = document.createElement('span');
-        dot.style.cssText = `display:inline-block;width:8px;height:8px;border-radius:50%;background:${dotColor};margin-right:8px;flex-shrink:0;box-shadow:0 0 5px ${dotColor}`;
-        
-        const nome = document.createElement('span');
+        var dot = document.createElement('span');
+        dot.style.cssText = 'display:inline-block;width:8px;height:8px;border-radius:50%;background:' + dotColor + ';margin-right:8px;flex-shrink:0;box-shadow:0 0 5px ' + dotColor;
+        var nome = document.createElement('span');
         nome.textContent = c.nome;
-        
-        const tipo = document.createElement('span');
+        var tipo = document.createElement('span');
         tipo.className = 'city-type';
         tipo.style.color = dotColor;
         tipo.textContent = ' — ' + t;
-        
         li.appendChild(dot);
         li.appendChild(nome);
         li.appendChild(tipo);
         lista.appendChild(li);
       });
     } else {
-      const li = document.createElement('li');
+      var li = document.createElement('li');
       li.className = 'mapa-hint';
       li.textContent = 'Nenhuma unidade — seja o primeiro!';
       lista.appendChild(li);
     }
   }
 
-  // ── Carregar GeoJSON + adicionar marcadores ─────────────────
   fetch('https://raw.githubusercontent.com/giuliano-macedo/geodata-br-states/main/geojson/br_states.json')
-    .then(r => r.json())
-    .then(data => {
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
       L.geoJSON(data, {
-        style: feature => {
-          const uf = feature.id;
-          return cidadesData[uf] ? styleHasCity : styleNormal;
+        style: function(feature) {
+          return cidadesData[feature.id] ? styleHasCity : styleNormal;
         },
-        onEachFeature: (feature, layer) => {
-          const uf   = feature.id;
-          const name = feature.properties.name || feature.id;
-          layer.on('mouseover', () => { if (layer !== activeLayer) layer.setStyle(styleHover); });
-          layer.on('mouseout',  () => { if (layer !== activeLayer) layer.setStyle(cidadesData[uf] ? styleHasCity : styleNormal); });
-          layer.on('click', () => {
+        onEachFeature: function(feature, layer) {
+          var uf   = feature.id;
+          var name = feature.properties.name || feature.id;
+          layer.on('mouseover', function() { if (layer !== activeLayer) layer.setStyle(styleHover); });
+          layer.on('mouseout',  function() { if (layer !== activeLayer) layer.setStyle(cidadesData[uf] ? styleHasCity : styleNormal); });
+          layer.on('click', function() {
             if (activeLayer) {
-              const prevUF = activeLayer.feature.id;
+              var prevUF = activeLayer.feature.id;
               activeLayer.setStyle(cidadesData[prevUF] ? styleHasCity : styleNormal);
             }
             layer.setStyle(styleActive);
@@ -259,13 +256,14 @@
         }
       }).addTo(map);
 
-      // Adicionar marcadores de cidade sobre os estados
-      Object.entries(cidadesData).forEach(([uf, cities]) => {
-        cities.forEach(c => {
-          const isSlim = slims.includes(normalize(c.nome));
-          const icon = isSlim ? iconSlim : iconFranquia;
-          const label = isSlim ? 'Slim' : 'Franquia';
-          L.marker([c.lat, c.lng], { icon })
+      Object.entries(cidadesData).forEach(function(entry) {
+        var uf = entry[0];
+        var cities = entry[1];
+        cities.forEach(function(c) {
+          var isSlim = slims.includes(normalize(c.nome));
+          var icon = isSlim ? iconSlim : iconFranquia;
+          var label = isSlim ? 'Slim' : 'Franquia';
+          L.marker([c.lat, c.lng], { icon: icon })
             .bindPopup(
               '<div style="font-family:Inter,sans-serif;font-size:13px;line-height:1.5">' +
               '<strong style="color:#f7f9f6">' + c.nome + '</strong><br>' +
@@ -277,14 +275,13 @@
         });
       });
     })
-    .catch(err => {
+    .catch(function() {
       mapEl.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9aa39a;font-size:14px">Mapa indisponível offline</div>';
     });
 
-  // ── Legenda ────────────────────────────────────────────────
-  const legend = L.control({ position: 'bottomleft' });
-  legend.onAdd = () => {
-    const d = L.DomUtil.create('div', 'map-legend');
+  var legend = L.control({ position: 'bottomleft' });
+  legend.onAdd = function() {
+    var d = L.DomUtil.create('div', 'map-legend');
     d.innerHTML =
       '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#9be15d;margin-right:6px;box-shadow:0 0 6px #9be15d"></span>Franquia' +
       '<br>' +
@@ -293,5 +290,3 @@
   };
   legend.addTo(map);
 })();
-
-
