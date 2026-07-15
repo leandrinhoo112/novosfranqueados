@@ -85,7 +85,7 @@
 
     Promise.all(requests).then(function(results) {
       var success = results.some(function(res) { return res.success; });
-      if (btn) { btn.disabled = false; btn.textContent = 'Quero ser franqueado'; }
+      if (btn) { btn.disabled = false; btn.textContent = 'Quero ser manager'; }
       if (success) {
         if (modal) modal.style.display = 'flex';
         form.reset();
@@ -93,7 +93,7 @@
         alert('Erro ao enviar. Tente novamente.');
       }
     }).catch(function() {
-      if (btn) { btn.disabled = false; btn.textContent = 'Quero ser franqueado'; }
+      if (btn) { btn.disabled = false; btn.textContent = 'Quero ser manager'; }
       alert('Erro de conexao. Verifique sua internet e tente novamente.');
     });
   });

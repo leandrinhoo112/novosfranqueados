@@ -664,3 +664,85 @@ a:hover { color: var(--green); }
 .prod-card { border-top-color: var(--green) !important; }
 .prod-accent { background: var(--green) !important; }
 
+
+
+/* ========== MODELOS DE NEGÓCIO - GRID COM JORNADA ========== */
+.modelos-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+.modelo-card {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--green-border) !important;
+  background: linear-gradient(170deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  display: flex;
+  flex-direction: column;
+}
+.modelo-jornada {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+}
+.jornada-titulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 24px;
+  border-left: 3px solid var(--green);
+  padding-left: 12px;
+}
+.jornada-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.jornada-num {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green);
+  background: rgba(155,225,93,0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(155,225,93,0.3);
+}
+.jornada-content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+.jornada-content p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.jornada-line {
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--green), transparent);
+  margin-left: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+  .modelos-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    max-width: 480px;
+  }
+}
