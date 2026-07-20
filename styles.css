@@ -799,12 +799,12 @@ a:hover { color: var(--green); }
   .leaflet-map-wrap { height: 350px; }
   .mapa-info-panel { max-height: 200px; }
 
-  .steps-grid { flex-direction: column; gap: 0; }
+  .steps-grid { flex-direction: column; gap: 0; align-items: stretch !important; width: 100%; } .step-card { width: 100% !important; box-sizing: border-box; }
   .step-card { padding: 24px 20px; }
   .step-arrow { transform: rotate(90deg); margin: 0 auto; padding: 6px 0; }
 
-  .fixed-bar { padding: 10px 16px; }
-  .fixed-bar-inner { flex-direction: column; gap: 8px; text-align: center; }
+  .fixed-bar { padding: 10px 16px; width: 100%; box-sizing: border-box; }
+  .fixed-bar-inner { flex-direction: column; gap: 8px; text-align: center; width: 100%; box-sizing: border-box; }
   .fixed-bar-inner p { font-size: 12px; }
   .fixed-bar .btn-primary { width: 100%; justify-content: center; padding: 12px 20px; font-size: 14px; }
 
@@ -864,7 +864,7 @@ a:hover { color: var(--green); }
 
   .modelo-financeiro { grid-template-columns: 1fr; }
 
-  .selo-img { max-width: 200px; }
+  .selo-img { max-width: 200px; } .fixed-bar-inner p { font-size: 11px; line-height: 1.4; margin: 0 0 4px 0; word-break: break-word; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .footer-bottom p { font-size: 12px; }
   .footer-bottom a { font-size: 12px; }
