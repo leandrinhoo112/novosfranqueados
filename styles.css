@@ -746,3 +746,140 @@ a:hover { color: var(--green); }
     max-width: 480px;
   }
 }
+
+/* ====================================================================
+   RESPONSIVIDADE MOBILE COMPLETA
+   ==================================================================== */
+
+/* ---------- Tablets e telas menores (max 900px) ---------- */
+@media (max-width: 900px) {
+  .hero-section { min-height: auto; padding-top: 80px; padding-bottom: 40px; }
+  .hero-content-wrapper {
+    flex-direction: column;
+    padding: 0 20px;
+    padding-top: 40px;
+    gap: 32px;
+    text-align: center;
+  }
+  .hero-text { text-align: center; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-form-card { max-width: 100%; }
+  .hero-title { font-size: clamp(28px, 7vw, 44px); }
+
+  .navbar-wrapper { top: 10px; }
+  .navbar__inner { margin: 0 12px; padding: 8px 16px; }
+  .navbar-links { display: none; }
+  .nav-cta { font-size: 13px; padding: 8px 16px; }
+
+  .section { padding: 48px 20px; }
+  .section__title { font-size: clamp(24px, 5vw, 32px); }
+  .eyebrow { font-size: 12px; }
+
+  .stats-bar { padding: 24px 16px; }
+  .stats-inner { flex-wrap: wrap; gap: 0; padding: 0 12px; }
+  .stat-item { flex: 1 1 45%; min-width: 100px; padding: 8px 0; }
+  .stat-num { font-size: 1.8rem; }
+  .stat-label { font-size: 0.75rem; }
+  .stat-sep { display: none; }
+
+  .dif-item { gap: 16px; padding: 24px 0; }
+  .dif-num { font-size: 2.5rem; min-width: 48px; }
+  .dif-body { flex-direction: column; gap: 10px; }
+  .dif-icon-wrap { display: none; }
+
+  .feature-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .prod-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .dep-grid { grid-template-columns: 1fr; gap: 16px; }
+  .dep-card { padding: 24px; }
+  .dep-avatar { width: 40px; height: 40px; }
+  .dep-text { font-size: 14px; }
+
+  .mapa-wrap { grid-template-columns: 1fr; gap: 20px; }
+  .leaflet-map-wrap { height: 350px; }
+  .mapa-info-panel { max-height: 200px; }
+
+  .steps-grid { flex-direction: column; gap: 0; }
+  .step-card { padding: 24px 20px; }
+  .step-arrow { transform: rotate(90deg); margin: 0 auto; padding: 6px 0; }
+
+  .fixed-bar { padding: 10px 16px; }
+  .fixed-bar-inner { flex-direction: column; gap: 8px; text-align: center; }
+  .fixed-bar-inner p { font-size: 12px; }
+  .fixed-bar .btn-primary { width: 100%; justify-content: center; padding: 12px 20px; font-size: 14px; }
+
+  .footer { padding: 40px 20px 20px; }
+  .selo-img { max-width: 260px; }
+}
+
+/* ---------- Mobile pequeno (max 640px) ---------- */
+@media (max-width: 640px) {
+  .hero-section { padding-top: 70px; padding-bottom: 30px; }
+  .hero-content-wrapper { padding: 0 16px; padding-top: 30px; gap: 24px; }
+  .hero-title { font-size: clamp(24px, 8vw, 36px); line-height: 1.1; }
+  .hero-sub { font-size: 15px; margin-bottom: 16px; }
+  .hero-form-card { padding: 24px 20px; }
+  .hero-form-card h3 { font-size: 1rem !important; }
+
+  .section { padding: 40px 16px; }
+  .section__title { font-size: clamp(22px, 6vw, 28px); }
+  .section__sub { font-size: 14px; }
+
+  .stats-inner { justify-content: space-around; }
+  .stat-item { flex: 0 0 50%; text-align: center; }
+
+  .feature-grid { grid-template-columns: 1fr; gap: 12px; }
+  .feature-card { padding: 20px; }
+  .feature-card--wide { grid-column: span 1; }
+
+  .prod-grid { grid-template-columns: 1fr; gap: 12px; }
+
+  .dif-list { gap: 0; }
+  .dif-item { flex-direction: column; gap: 12px; padding: 20px 0; }
+  .dif-num { font-size: 2rem; }
+  .dif-body h3 { font-size: 16px; }
+  .dif-body p { font-size: 13px; }
+
+  .step-num { font-size: 2rem; }
+  .step-card h3 { font-size: 14px; }
+  .step-card p { font-size: 12px; }
+
+  .dep-card { padding: 20px; }
+  .dep-text { font-size: 13px; line-height: 1.5; }
+  .dep-author strong { font-size: 14px; }
+  .dep-author span { font-size: 11px; }
+
+  .leaflet-map-wrap { height: 280px; border-radius: 12px; }
+  .mapa-info-panel { max-height: 180px; font-size: 13px; }
+  #mapa-estado-nome { font-size: 16px; }
+
+  .input, .select { padding: 10px 14px; font-size: 14px; margin-bottom: 12px; }
+  .form-label { font-size: 12px; margin-bottom: 4px; }
+  .btn-primary { padding: 13px 22px; font-size: 14px; }
+
+  .vant-grid { grid-template-columns: 1fr; }
+  .vant-grid .prod-card:last-child { grid-column: span 1; }
+
+  .video-placeholder { aspect-ratio: 16 / 9; }
+
+  .modelo-financeiro { grid-template-columns: 1fr; }
+
+  .selo-img { max-width: 200px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .footer-bottom p { font-size: 12px; }
+  .footer-bottom a { font-size: 12px; }
+}
+
+/* ---------- Mobile muito pequeno (max 400px) ---------- */
+@media (max-width: 400px) {
+  .hero-title { font-size: 22px; }
+  .hero-sub { font-size: 14px; }
+  .hero-form-card { padding: 20px 16px; }
+  .navbar__inner { margin: 0 8px; padding: 6px 12px; }
+  .nav-logo { height: 26px; }
+  .section { padding: 32px 12px; }
+  .section__title { font-size: 20px; }
+  .stats-inner { padding: 0 8px; }
+  .stat-num { font-size: 1.5rem; }
+  .btn-primary { padding: 11px 18px; font-size: 13px; }
+}
