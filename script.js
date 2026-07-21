@@ -226,6 +226,7 @@
       });
           } else {
         var li = document.createElement('li');
+        li.className = 'mapa-vazio';
         li.style.cssText = 'display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px 10px; text-align: center; width: 100%; box-sizing: border-box;';
         
         var text = document.createElement('span');

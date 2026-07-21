@@ -972,3 +972,13 @@ a:hover { color: var(--green); }
 .dep-author:hover .curr-toggle-btn {
   color: var(--text-heading) !important;
 }
+
+
+/* Reset da bolinha verde e do padding no estado vazio do mapa */
+.mapa-cidades li.mapa-vazio {
+  padding-left: 0 !important;
+}
+.mapa-cidades li.mapa-vazio::before {
+  content: none !important;
+  display: none !important;
+}
