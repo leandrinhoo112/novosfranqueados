@@ -982,3 +982,13 @@ a:hover { color: var(--green); }
   content: none !important;
   display: none !important;
 }
+
+
+/* Remover bolinha verde estática (::before) de todos os itens do painel do mapa */
+.mapa-cidades li::before {
+  content: none !important;
+  display: none !important;
+}
+.mapa-cidades li {
+  padding-left: 0 !important;
+}
