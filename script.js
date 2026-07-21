@@ -290,3 +290,37 @@
   };
   legend.addTo(map);
 })();
+
+
+
+(function initTestimonialsToggle() {
+  var cards = document.querySelectorAll('.dep-card');
+  cards.forEach(function(card) {
+    var author = card.querySelector('.dep-author');
+    var curriculo = card.querySelector('.dep-curriculo');
+    var btn = card.querySelector('.curr-toggle-btn');
+    if (!author || !curriculo || !btn) return;
+
+    author.addEventListener('click', function() {
+      var isActive = curriculo.classList.contains('active');
+      
+      // Fecha os outros minicurrículos abertos para manter o visual limpo
+      cards.forEach(function(c) {
+        var otherCurr = c.querySelector('.dep-curriculo');
+        var otherBtn = c.querySelector('.curr-toggle-btn');
+        if (otherCurr && otherCurr !== curriculo) {
+          otherCurr.classList.remove('active');
+          if (otherBtn) otherBtn.textContent = 'Ver minicurrículo ▾';
+        }
+      });
+
+      if (isActive) {
+        curriculo.classList.remove('active');
+        btn.textContent = 'Ver minicurrículo ▾';
+      } else {
+        curriculo.classList.add('active');
+        btn.textContent = 'Ocultar minicurrículo ▴';
+      }
+    });
+  });
+})();
