@@ -224,12 +224,39 @@
         li.appendChild(tipo);
         lista.appendChild(li);
       });
-    } else {
-      var li = document.createElement('li');
-      li.className = 'mapa-hint';
-      li.textContent = 'Nenhuma unidade — seja o primeiro!';
-      lista.appendChild(li);
-    }
+          } else {
+        var li = document.createElement('li');
+        li.style.cssText = 'display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px 10px; text-align: center; width: 100%; box-sizing: border-box;';
+        
+        var text = document.createElement('span');
+        text.className = 'mapa-hint';
+        text.style.cssText = 'font-size: 13.5px; color: var(--text-dim); font-style: italic;';
+        text.textContent = 'Nenhuma unidade ativa neste estado.';
+        
+        var btn = document.createElement('a');
+        btn.href = '#hero';
+        btn.className = 'btn-primary';
+        btn.style.cssText = 'font-size: 12.5px; padding: 10px 18px; width: auto; justify-content: center; margin-top: 4px; box-shadow: 0 8px 24px -6px rgba(155,225,93,0.5); display: inline-flex; align-items: center; gap: 8px; border-radius: var(--radius-pill); cursor: pointer; text-decoration: none; font-weight: 700; color: var(--green-dark); background: var(--green); transition: transform 0.2s, box-shadow 0.2s;';
+        btn.innerHTML = 'Seja o primeiro <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.5;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+        
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var targetEl = document.getElementById('hero');
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            var cityInput = document.getElementsByName('Cidade')[0];
+            if (cityInput) {
+              cityInput.value = '';
+              cityInput.placeholder = 'Sua cidade em ' + name;
+              setTimeout(function() { cityInput.focus(); }, 800);
+            }
+          }
+        });
+
+        li.appendChild(text);
+        li.appendChild(btn);
+        lista.appendChild(li);
+      }
   }
 
   fetch('https://raw.githubusercontent.com/giuliano-macedo/geodata-br-states/main/geojson/br_states.json')
