@@ -241,7 +241,7 @@ a:hover { color: var(--green); }
 .stat-sep { width: 1px; height: 48px; background: rgba(6,20,10,.2); flex-shrink: 0; }
 
 /* ========== VIDEO ========== */
-.video-section { padding-top: 0; padding-bottom: 0; }
+.video-section { padding-top: 64px !important; padding-bottom: 32px !important; }
 .video-wrapper { max-width: 900px; margin: 0 auto; padding: 0 32px; }
 .video-placeholder {
   aspect-ratio: 16/9; background: var(--bg-card);
